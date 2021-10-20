@@ -23,6 +23,7 @@ def signin(request:HttpRequest):
         if user is not None:
             login(request,user)
             messages.success(request, 'User logged in.')
+            return redirect("/admin/")
         else:
             messages.error(request,"Sorry, username or password incorrect !")
 
