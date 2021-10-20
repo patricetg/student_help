@@ -1,0 +1,16 @@
+{% extends "authentication/layout/auth_layout.html" %}
+
+
+{%block page_title %}
+            Login
+{%endblock%}
+
+{%block layout_main_content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" >
+        <input type="password" name="pwd" placeholder="Password">
+        <input type="submit" value="Se connecter">
+    </form>
+{%endblock%}
+

@@ -1,0 +1,15 @@
+{% extends "back_office/layout/back_office_layout.html" %}
+
+
+{%block page_title %}
+            Nouveau logement
+{%endblock%}
+
+{%block layout_main_content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Enregistrer">
+    </form>
+{%endblock layout_main_content%}
+

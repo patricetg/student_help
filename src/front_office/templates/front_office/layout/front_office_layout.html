@@ -1,0 +1,137 @@
+<!doctype html>
+{%load static%}
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            {%block page_title %}
+             Front pages
+            {%endblock page_title%}
+
+        </title>
+
+        <!-- Plugins CSS -->
+        <link href="{% static 'templateFiles/assan-landing/css/plugins/plugins.css' %}" rel="stylesheet">
+        <link href="{% static 'templateFiles/assan-landing/linearicons/fonts.css' %}" rel="stylesheet">
+        <link href="{% static 'templateFiles/assan-landing/css/style.css' %}" rel="stylesheet">
+
+        <style>
+            main.main-content{
+                margin-bottom: 0;
+            }
+
+            .mt-6{
+                margin-top:10rem;
+            }
+        </style>
+
+    </head>
+    <body data-spy="scroll" data-target="#landingkit-navbar" data-offset="71">
+
+        <div id="preloader">
+            <div id="preloader-inner"></div>
+        </div><!--/preloader-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-sticky">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index-2.html">
+                    <img src="{% static 'templateFiles/assan-landing/images/logo.png' %}" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#landingkit-navbar" aria-controls="landingkit-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="landingkit-navbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-scroll href="{% url 'fo_home' %}">Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-scroll href="{% url 'fo_niveaux' %}">Orientation de niveaux</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-scroll href="#pricing">Piste de métiers</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" data-scroll href="#reviews">reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-scroll href="#faqs">Faqs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-scroll href="#subscribe">
+                                Connexion
+                            </a>
+                        </li> -->
+                    </ul>
+                    <ul class="navbar-nav ml-auto navbar-right">
+
+                        
+        
+
+
+                        <li class="nav-item">
+
+                            {%if request.user.is_authenticated%}
+                                <!-- Hello {{ request.user }} -p->
+                                <a class="nav-link" data-scroll href="{% url 'logout' %}">Logout</a>
+                            {%else%}
+                                <a class="nav-link" data-scroll href="{% url 'login' %}">
+                                    Login
+                                </a>
+                            {%endif%}
+<!-- 
+                            <a class="nav-link" data-scroll href="#subscribe">
+                                Connexion
+                            </a> -->
+
+                        </li>
+<!-- 
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" target="_blank" href="https://wrapbootstrap.com/theme/assan-multipurpose-18-themes-admin-WB05F069P/?ref=wb_rakesh">Buy Now</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <span class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Landing Demos
+                            </span>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item current-demo" href="index-2.html">Default Demo</a>
+                                <a class="dropdown-item" href="index-video.html">Video BG Demo</a>
+                                <a class="dropdown-item" href="index-newsletter.html">Newsletter Demo</a>
+                                <a class="dropdown-item" href="index-contact-form.html">Contact form Demo</a>
+                                <a class="dropdown-item" href="index-minimal-flat.html">Minimal flat Demo</a>
+                                <a class="dropdown-item" href="index-saas1.html">Saas demo1</a>
+                                <a class="dropdown-item" href="index-saas2.html">Saas demo2</a>
+                                <a class="dropdown-item" href="index-saas3.html">Saas demo3</a>
+                                <a class="dropdown-item" href="index-mobileapp1.html">Mobile App demo1</a>
+                                <a class="dropdown-item" href="index-mobileapp2.html">Mobile App demo2</a>
+                                <a class="dropdown-item" href="index-mobileapp3.html">Mobile App demo3</a>
+                            </div>
+                        </li>
+                         -->
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+
+        <main class="main-content">
+        
+            {%block layout_main_content %}
+            {%endblock layout_main_content%}
+        </main>
+        <!--back to top-->
+        <a href="#" class="back-to-top" id="back-to-top"><i class="icon-chevron-up"></i></a>
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script type="text/javascript" src="{% static 'templateFiles/assan-landing/js/plugins/plugins.js' %}"></script> 
+        <!--tweet-scroller-->
+        <script src="{% static 'templateFiles/assan-landing/tweetie/tweetie.min.js' %}" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'templateFiles/assan-landing/js/landing.custom.js' %}"></script> 
+    </body>
+</html>

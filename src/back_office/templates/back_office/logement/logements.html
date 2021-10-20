@@ -1,0 +1,20 @@
+{% extends "back_office/layout/back_office_layout.html" %}
+
+
+{%block page_title %}
+            Logements
+{%endblock%}
+
+{%block layout_main_content %}
+    <h2>Logements page</h2>
+    {%for logement in logements%}
+        <p>
+           {{logement.id}} - {{logement}} : 
+           <a href="{% url 'bo_update_logement' logement.id  %}">Modifier</a>
+           |
+           <a href="{% url 'bo_delete_logement' logement.id  %}">Supprimer</a>
+
+        </p>
+    {%endfor%}
+{%endblock%}
+

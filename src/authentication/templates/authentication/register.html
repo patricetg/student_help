@@ -1,0 +1,16 @@
+{% extends "authentication/layout/auth_layout.html" %}
+
+
+{%block page_title %}
+            Register
+{%endblock%}
+
+{%block layout_main_content %}
+    Register page
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Créer le compte">
+    </form>
+{%endblock%}
+

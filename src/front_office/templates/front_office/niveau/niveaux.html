@@ -1,0 +1,40 @@
+{% extends "front_office/layout/front_office_layout.html" %}
+
+
+{%block page_title %}
+            Niveaux
+{%endblock%}
+
+{%block layout_main_content %}
+
+    <div class="container-fluid mt-6">
+            
+        {%include "front_office/include/search_bar.html" %}
+<!-- 
+        <div class="row">
+            <div class="col">
+                <p>
+                Nous disposons de {{ nb_debouches }} fiche(s) métier gratuitement consultatble et de {{ nb_niveaux }} fiche(s) niveau
+            </p>
+            </div>
+            
+        </div> -->
+
+        <div class="row">
+            
+            {%for niveau in niveaux%}
+                <div class="col-md-4">
+                    <p>
+                        <a href="{% url 'fo_niveau' niveau.id %}">{{ niveau.id }} - {{ niveau }}</a>, {{ niveau.createdAt|timesince }} ago
+                    </p>   
+                </div>
+                
+
+            {%endfor%}
+                
+        </div>
+
+    </div>
+
+{%endblock%}
+

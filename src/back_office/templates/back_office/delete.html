@@ -1,0 +1,16 @@
+{% extends "back_office/layout/back_office_layout.html" %}
+
+
+{%block page_title %}
+            Confirm deletion
+{%endblock%}
+
+{%block layout_main_content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Etes-vous sûr de vouloir supprimer "{{obj}}" ? </p>
+        <a href="{{ request.META.HTTP_REFERER }}">Retour</a>
+        <input type="submit" value="Supprimer">
+    </form>
+{%endblock layout_main_content%}
+

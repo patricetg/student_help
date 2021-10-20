@@ -1,0 +1,68 @@
+{% extends "front_office/layout/front_office_layout.html" %}
+
+
+{%block page_title %}
+    {{ niveau }}
+{%endblock%}
+
+{%block layout_main_content %}
+
+<div class="container-fluid mt-6">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            
+                <div class="row">
+                    
+                    <div class="col-12">
+                                
+                        <!-- <a href="{% url 'fo_niveaux' %}"> Niveaux </a> -->
+                        <p>
+                           Le niveau {{ niveau }} conduit aux débouchés ci-dessous :
+                        </p>
+            
+                    </div>
+                        
+                    {%for metier in metiers %}
+                        <div class="col-md-4">
+                            <p>
+                                {{ metier.debouche }}
+                            </p>
+                        </div>
+                    {%endfor%}
+                    
+                </div>
+        </div>
+
+        <div class="col-md-6">
+
+            
+                <div class="row">
+            
+                    <div class="col-12">
+                            
+                        <p>
+                           Il est dispensé par les écoles ci-dessous :
+                        </p>
+                
+                    </div>
+                        
+                    {%for ecole in ecoles%}
+                        <div class="col-md-4">
+                            <p>
+                                {{ ecole }}
+                            </p>
+                        </div>
+                    {%endfor%}
+                </div>
+        </div>
+    </div>
+
+        
+    </div>
+
+</div>
+
+{%endblock%}
+
